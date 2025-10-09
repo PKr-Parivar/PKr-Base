@@ -13,7 +13,7 @@ import (
 
 	"os"
 
-	"github.com/ButterHost69/PKr-Base/utils"
+	"github.com/PKr-Parivar/PKr-Base/utils"
 )
 
 const RSA_KEY_SIZE = 4096

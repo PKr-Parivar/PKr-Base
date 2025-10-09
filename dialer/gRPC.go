@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ButterHost69/PKr-Base/logger"
-	pb "github.com/ButterHost69/PKr-Base/pb"
+	"github.com/PKr-Parivar/PKr-Base/logger"
+	pb "github.com/PKr-Parivar/PKr-Base/pb"
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"

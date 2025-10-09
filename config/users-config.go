@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ButterHost69/PKr-Base/encrypt"
-	"github.com/ButterHost69/PKr-Base/utils"
+	"github.com/PKr-Parivar/PKr-Base/encrypt"
+	"github.com/PKr-Parivar/PKr-Base/utils"
 )
 
 func CreateUserConfigIfNotExists(username, password, server_ip string) error {

@@ -6,9 +6,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ButterHost69/PKr-Base/config"
-	"github.com/ButterHost69/PKr-Base/encrypt"
-	"github.com/ButterHost69/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/config"
+	"github.com/PKr-Parivar/PKr-Base/encrypt"
+	"github.com/PKr-Parivar/PKr-Base/logger"
 	"github.com/ButterHost69/kcp-go"
 )
 

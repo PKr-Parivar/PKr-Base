@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/rpc"
 
-	"github.com/ButterHost69/PKr-Base/models"
+	"github.com/PKr-Parivar/PKr-Base/models"
 )
 
 type ClientCallHandler struct{}

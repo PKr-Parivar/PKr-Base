@@ -1,4 +1,4 @@
-module github.com/ButterHost69/PKr-Base
+module github.com/PKr-Parivar/PKr-Base
 
 go 1.24.0
 

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ButterHost69/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/logger"
 )
 
 const (

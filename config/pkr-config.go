@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ButterHost69/PKr-Base/utils"
+	"github.com/PKr-Parivar/PKr-Base/utils"
 )
 
 var WORKSPACE_CONFIG_FILE_PATH = filepath.Join(".PKr", "workspace-config.json")

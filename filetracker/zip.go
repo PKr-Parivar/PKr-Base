@@ -10,7 +10,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ButterHost69/PKr-Base/config"
+	"github.com/PKr-Parivar/PKr-Base/config"
 )
 
 func addFilesToZip(writer *zip.Writer, dir_path string, relativepath string) error {

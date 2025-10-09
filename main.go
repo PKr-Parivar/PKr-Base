@@ -11,11 +11,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ButterHost69/PKr-Base/config"
-	"github.com/ButterHost69/PKr-Base/dialer"
-	"github.com/ButterHost69/PKr-Base/logger"
-	"github.com/ButterHost69/PKr-Base/utils"
-	"github.com/ButterHost69/PKr-Base/ws"
+	"github.com/PKr-Parivar/PKr-Base/config"
+	"github.com/PKr-Parivar/PKr-Base/dialer"
+	"github.com/PKr-Parivar/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/utils"
+	"github.com/PKr-Parivar/PKr-Base/ws"
 
 	"github.com/gorilla/websocket"
 )

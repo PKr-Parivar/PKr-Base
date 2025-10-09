@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/ButterHost69/PKr-Base/encrypt"
+	"github.com/PKr-Parivar/PKr-Base/encrypt"
 )
 
 var TREE_REL_PATH = filepath.Join(".PKr", "file-tree.json")

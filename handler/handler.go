@@ -9,11 +9,11 @@ import (
 
 	"os"
 
-	"github.com/ButterHost69/PKr-Base/config"
-	"github.com/ButterHost69/PKr-Base/encrypt"
-	"github.com/ButterHost69/PKr-Base/filetracker"
-	"github.com/ButterHost69/PKr-Base/logger"
-	"github.com/ButterHost69/PKr-Base/models"
+	"github.com/PKr-Parivar/PKr-Base/config"
+	"github.com/PKr-Parivar/PKr-Base/encrypt"
+	"github.com/PKr-Parivar/PKr-Base/filetracker"
+	"github.com/PKr-Parivar/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/models"
 )
 
 var (

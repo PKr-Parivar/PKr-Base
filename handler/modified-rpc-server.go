@@ -11,7 +11,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ButterHost69/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/logger"
 )
 
 // Precompute the reflect type for error.

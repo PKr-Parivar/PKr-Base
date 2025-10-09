@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"time"
 
-	"github.com/ButterHost69/PKr-Base/config"
-	"github.com/ButterHost69/PKr-Base/handler"
-	"github.com/ButterHost69/PKr-Base/logger"
-	"github.com/ButterHost69/PKr-Base/models"
+	"github.com/PKr-Parivar/PKr-Base/config"
+	"github.com/PKr-Parivar/PKr-Base/handler"
+	"github.com/PKr-Parivar/PKr-Base/logger"
+	"github.com/PKr-Parivar/PKr-Base/models"
 
 	"github.com/gorilla/websocket"
 )
