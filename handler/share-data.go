@@ -9,7 +9,7 @@ import (
 	"github.com/PKr-Parivar/PKr-Base/config"
 	"github.com/PKr-Parivar/PKr-Base/encrypt"
 	"github.com/PKr-Parivar/PKr-Base/logger"
-	"github.com/ButterHost69/kcp-go"
+	"github.com/PKr-Parivar/kcp-go"
 )
 
 const DATA_CHUNK = encrypt.DATA_CHUNK

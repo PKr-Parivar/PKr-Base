@@ -21,7 +21,7 @@ import (
 	"github.com/PKr-Parivar/PKr-Base/handler"
 	"github.com/PKr-Parivar/PKr-Base/logger"
 	"github.com/PKr-Parivar/PKr-Base/models"
-	"github.com/ButterHost69/kcp-go"
+	"github.com/PKr-Parivar/kcp-go"
 	"github.com/gen2brain/beeep"
 	"github.com/gorilla/websocket"
 )

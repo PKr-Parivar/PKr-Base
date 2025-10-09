@@ -3,7 +3,7 @@ module github.com/PKr-Parivar/PKr-Base
 go 1.24.0
 
 require (
-	github.com/ButterHost69/kcp-go v1.0.10
+	github.com/PKr-Parivar/kcp-go v1.0.14
 	github.com/ccding/go-stun v0.1.5
 	github.com/gen2brain/beeep v0.11.1
 	github.com/gorilla/websocket v1.5.3

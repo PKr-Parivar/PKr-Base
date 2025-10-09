@@ -13,7 +13,7 @@ import (
 	"github.com/PKr-Parivar/PKr-Base/logger"
 	"github.com/PKr-Parivar/PKr-Base/utils"
 
-	"github.com/ButterHost69/kcp-go"
+	"github.com/PKr-Parivar/kcp-go"
 )
 
 type ClientHandlerNameManager struct {
