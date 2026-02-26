@@ -11,17 +11,12 @@ import (
 	"github.com/PKr-Parivar/PKr-Base/utils"
 )
 
-func CreateUserConfigIfNotExists(username, password, server_ip, user_config_file_path string) error {
-	var err error
-
-	// If user_config_file_path not set (this is not possible, but just incase)
-	if user_config_file_path == "" {
-		user_config_file_path, err = utils.GetUserConfigFilePath()
-		if err != nil {
-			fmt.Println("Error while User Config File Path:", err)
-			fmt.Println("Source: CreateUserConfigIfNotExists()")
-			return err
-		}
+func CreateUserConfigIfNotExists(username, password, server_ip string) error {
+	user_config_file_path, err := utils.GetUserConfigFilePath()
+	if err != nil {
+		fmt.Println("Error while User Config File Path:", err)
+		fmt.Println("Source: CreateUserConfigIfNotExists()")
+		return err
 	}
 
 	my_keys_path, err := utils.GetMyKeysPath()
