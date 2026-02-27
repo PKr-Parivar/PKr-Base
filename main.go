@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -24,14 +25,14 @@ import (
 var WEBSOCKET_SERVER_ADDR_WITH_QUERY url.URL
 var USER_CONF config.UserConfig
 
+var (
+	cpath = flag.String("cpath", "", "set custom config directory (default: uses your APPDATA or ~/.local/share)")
+)
+
 func init() {
-	args := os.Args
-	if len(args) > 2 && args[1] == "debug" {
-		for i, arg := range args {
-			if arg == "--fp" && i+1 < len(args) {
-				utils.SetUserConfigDir(args[i+1])
-			}
-		}
+	flag.Parse()
+	if *cpath != "" {
+		utils.SetUserConfigDir(*cpath)
 	}
 
 	err := logger.InitLogger()
