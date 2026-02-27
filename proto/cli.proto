@@ -18,7 +18,9 @@ message RegisterRequest {
     string password = 2;
 }
 
-message RegisterResponse {}
+message RegisterResponse {
+    int32 ws_port = 1;
+}
 
 message RegisterWorkspaceRequest {
     string username = 1;
