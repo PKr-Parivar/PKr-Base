@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -53,11 +54,11 @@ func init() {
 	ws.MY_SERVER_IP = USER_CONF.ServerIP
 
 	raw_query := "username=" + escaped_username + "&password=" + escaped_password
-	websock_server_ip := strings.Split(USER_CONF.ServerIP, ":")[0]
+	websock_server_ip := fmt.Sprintf("%s:%d", USER_CONF.ServerIP, USER_CONF.ServerWSPort)
 
 	WEBSOCKET_SERVER_ADDR_WITH_QUERY = url.URL{
 		Scheme:   "ws",
-		Host:     websock_server_ip + ":8080",
+		Host:     websock_server_ip,
 		Path:     "/ws",
 		RawQuery: raw_query,
 	}
@@ -124,8 +125,10 @@ func main() {
 	go ws.PingPongWriter(done, ws_conn)
 
 	logger.LOGGER.Println("Preparing gRPC Client ...")
+
 	// New GRPC Client
-	gRPC_cli_service_client, err := dialer.GetNewGRPCClient(USER_CONF.ServerIP)
+	grpcAddr := fmt.Sprintf("%s:%d", USER_CONF.ServerIP, USER_CONF.ServergRPCPort)
+	gRPC_cli_service_client, err := dialer.GetNewGRPCClient(grpcAddr)
 	if err != nil {
 		logger.LOGGER.Println("Error:", err)
 		logger.LOGGER.Println("Description: Cannot Create New GRPC Client")

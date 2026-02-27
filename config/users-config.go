@@ -11,7 +11,7 @@ import (
 	"github.com/PKr-Parivar/PKr-Base/utils"
 )
 
-func CreateUserConfigIfNotExists(username, password, server_ip string) error {
+func CreateUserConfigIfNotExists(username, password, server_ip string, grpc_port, ws_port int) error {
 	user_config_file_path, err := utils.GetUserConfigFilePath()
 	if err != nil {
 		fmt.Println("Error while User Config File Path:", err)
@@ -62,9 +62,11 @@ func CreateUserConfigIfNotExists(username, password, server_ip string) error {
 	}
 
 	user_conf := UserConfig{
-		Username: username,
-		Password: password,
-		ServerIP: server_ip,
+		Username:       username,
+		Password:       password,
+		ServerIP:       server_ip,
+		ServerWSPort:   ws_port,
+		ServergRPCPort: grpc_port,
 	}
 
 	conf_bytes, err := json.Marshal(user_conf)

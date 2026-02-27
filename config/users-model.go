@@ -1,9 +1,11 @@
 package config
 
 type UserConfig struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
-	ServerIP string `json:"server_ip"`
+	Username       string `json:"username"`
+	Password       string `json:"password"`
+	ServerIP       string `json:"server_ip"`
+	ServerWSPort   int    `json:"server_ws_port"`
+	ServergRPCPort int    `json:"server_grpc_port"`
 
 	SendWorkspaces []SendWorkspaceFolder `json:"send_workspace"`
 	GetWorkspaces  []GetWorkspaceFolder  `json:"get_workspace"`
