@@ -90,12 +90,12 @@ func FetchAllFilesPaths(folder_path string) ([]FilePath, error) {
 }
 
 // Fetchs all Files and Than go routines the hash computations.
-// Reason for change -- to switch and process other files while 
-// waiting for Syscalls. 
+// Reason for change -- to switch and process other files while
+// waiting for Syscalls.
 // From personal Testing -------------
-// 		- Total Files: 2300
-// 		- Total Size: 110MB
-// 		- From 40 Sec -> 2.42 Sec (num of cpu cores - 16)
+//   - Total Files: 2300
+//   - Total Size: 110MB
+//   - From 40 Sec -> 2.42 Sec (num of cpu cores - 16)
 func GetNewTree(workspace_path string) (FileTree, error) {
 	file_paths, err := FetchAllFilesPaths(workspace_path)
 	if err != nil {
@@ -105,21 +105,24 @@ func GetNewTree(workspace_path string) (FileTree, error) {
 	}
 
 	n_files := len(file_paths)
-	numWorkers := min(runtime.NumCPU() * 2, n_files)
+	numWorkers := min(runtime.NumCPU()*2, n_files)
 
 	partitionSize := (n_files + numWorkers - 1) / numWorkers // `(n_files + numWorkers - 1)` : Run Atleast once
 	nodes := make([]Node, n_files)
 	var wg sync.WaitGroup
 
+	start := 0
+	limit := (n_files) % numWorkers
+
 	// No i:= 0 is ok -- Please Dont make it into range ; Again Cannot Read that Shit
 	for i := 0; i < numWorkers; i++ {
-		start := i * partitionSize
-		end := (i + 1) * partitionSize
-
-		// Do Not Min() this -- I cannot Read or Understand That Shit
-		if end > n_files {
-			end = n_files
+		// Needed for num_files % num_workers != 0
+		if limit != 0 && i == limit {
+			partitionSize -= 1
 		}
+
+		end := start + partitionSize
+
 		wg.Add(1)
 		go func(jobs []FilePath, res []Node) {
 			for j, job := range jobs {
@@ -136,6 +139,8 @@ func GetNewTree(workspace_path string) (FileTree, error) {
 			}
 			wg.Done()
 		}(file_paths[start:end], nodes[start:end])
+
+		start = end
 	}
 	wg.Wait()
 
